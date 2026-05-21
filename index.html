@@ -446,65 +446,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 }
 
 
-/* ═══ MODAL FORM ═══ */
-#reg-modal-overlay { animation: mfOverlayIn 0.25s ease; }
-@keyframes mfOverlayIn { from { opacity:0; } to { opacity:1; } }
-#reg-modal { animation: mfSlideIn 0.3s cubic-bezier(0.34,1.56,0.64,1); }
-@keyframes mfSlideIn { from { opacity:0; transform:translateY(-30px) scale(0.97); } to { opacity:1; transform:translateY(0) scale(1); } }
-@keyframes mfspin { from{transform:rotate(0deg);}to{transform:rotate(360deg);} }
 
-.mf-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
-.mf-group { display:flex; flex-direction:column; gap:7px; }
-.mf-full { margin-bottom:18px; }
-.mf-label { font-family:'Share Tech Mono',monospace; font-size:9.5px; letter-spacing:2px; color:#666; text-transform:uppercase; }
-.mf-input {
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  border-bottom:1px solid rgba(232,0,13,0.35);
-  color:#fff; padding:12px 15px;
-  font-family:'Rajdhani',sans-serif; font-size:14px; font-weight:500;
-  outline:none; transition:all 0.3s; width:100%;
-  appearance:none; -webkit-appearance:none;
-}
-.mf-input:focus { border-color:#e8000d; background:rgba(232,0,13,0.04); box-shadow:0 2px 0 0 #e8000d; }
-.mf-input::placeholder { color:#2a2a2a; }
-.mf-input.err { border-color:#ff4444!important; box-shadow:0 2px 0 0 rgba(255,68,68,0.5); }
-.mf-select {
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%23e8000d' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat:no-repeat; background-position:right 12px center;
-  padding-right:36px; cursor:pointer;
-}
-.mf-select option { background:#0a0202; color:#fff; }
-.mf-radio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:6px; }
-.mf-radio-stack { display:flex; flex-direction:column; gap:8px; margin-top:6px; }
-.mf-radio {
-  display:flex; align-items:center; gap:9px;
-  padding:10px 14px;
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(255,255,255,0.07);
-  border-left:2px solid transparent;
-  cursor:pointer; transition:all 0.22s; user-select:none;
-}
-.mf-radio:hover { background:rgba(232,0,13,0.06); border-left-color:rgba(232,0,13,0.5); }
-.mf-radio input[type="radio"] { display:none; }
-.mf-radio:has(input:checked) { background:rgba(232,0,13,0.1); border-color:rgba(232,0,13,0.3); border-left-color:#e8000d; }
-.mf-radio input:checked ~ .mf-rdot { background:#e8000d; border-color:#e8000d; box-shadow:0 0 10px rgba(232,0,13,0.6); }
-.mf-radio input:checked ~ .mf-rdot::after { opacity:1; }
-.mf-radio input:checked ~ .mf-rtxt { color:#fff; }
-.mf-rdot { width:15px; height:15px; min-width:15px; border:1.5px solid rgba(255,255,255,0.22); border-radius:50%; position:relative; transition:all 0.22s; }
-.mf-rdot::after { content:''; position:absolute; inset:3px; background:white; border-radius:50%; opacity:0; transition:opacity 0.18s; }
-.mf-rtxt { font-family:'Rajdhani',sans-serif; font-size:13.5px; font-weight:600; color:#777; transition:color 0.22s; }
-.mf-err { font-size:9.5px; color:#ff4444; font-family:'Share Tech Mono',monospace; letter-spacing:1px; min-height:13px; display:block; }
-
-/* Hide scroll when modal open */
-body.modal-open { overflow:hidden; }
-
-@media(max-width:680px) {
-  .mf-row { grid-template-columns:1fr; }
-  .mf-radio-grid { grid-template-columns:1fr 1fr; }
-  #reg-modal > div { padding:24px 18px !important; }
-  #reg-modal > div:first-child { padding:24px 18px 20px !important; }
-}
 
 </style>
 </head>
@@ -538,11 +480,11 @@ body.modal-open { overflow:hidden; }
     <li><a href="#speaker">Speaker</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact-strip">Contact</a></li>
-    <li><a href="#" style="color:var(--red);" onclick="openRegModal();return false;">Register</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" style="color:var(--red);" target="_blank" rel="noopener">Register</a></li>
   </ul>
   <div class="nav-right">
     <a href="tel:8754111740" class="nav-call"><svg viewBox="0 0 24 24" width="14" height="14" style="fill:currentColor;flex-shrink:0;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>&nbsp;8754111740</a>
-    <a href="#" class="nav-cta" onclick="openRegModal();return false;">Register Free</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" class="nav-cta" target="_blank" rel="noopener">Register Free</a>
   </div>
 </nav>
 
@@ -578,7 +520,7 @@ body.modal-open { overflow:hidden; }
       </div>
     </div>
     <div class="hero-cta-wrap">
-      <a href="#" class="btn-reserve" onclick="openRegModal();return false;">Reserve My Seat</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" class="btn-reserve" target="_blank" rel="noopener">Reserve My Seat</a>
       <a href="https://chat.whatsapp.com/JYm9O1rLtaaHXKehvN4Rwc" target="_blank" rel="noopener" class="hero-wa-btn">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Join WhatsApp
@@ -616,7 +558,7 @@ body.modal-open { overflow:hidden; }
         <li><span class="check-mark">✓</span>You want clarity on what companies expect from freshers</li>
         <li><span class="check-mark">✓</span>You are from Mechanical, Civil, or Electrical Engineering</li>
       </ul>
-      <a href="#" class="btn-primary" onclick="openRegModal();return false;">Yes, This Is Me — Reserve My Seat</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" class="btn-primary" target="_blank" rel="noopener">Yes, This Is Me — Reserve My Seat</a>
     </div>
   </div>
 </section>
@@ -648,7 +590,7 @@ body.modal-open { overflow:hidden; }
       <div class="stat-box"><span class="stat-num" id="stat2">0</span><div class="stat-label">% Industry Growth</div></div>
       <div class="stat-box"><span class="stat-num" id="stat3">0</span><div class="stat-label">Years Speaker Experience</div></div>
     </div>
-    <a href="#" class="btn-primary reveal" style="font-size:15px;padding:17px 46px;" onclick="openRegModal();return false;" onclick="openRegModal();return false.">Claim My Opportunity</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" class="btn-primary reveal" style="font-size:15px;padding:17px 46px;" target="_blank" rel="noopener">Claim My Opportunity</a>
   </div>
 </section>
 
@@ -751,7 +693,7 @@ body.modal-open { overflow:hidden; }
     <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><div class="countdown-lbl">Minutes</div></div>
     <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><div class="countdown-lbl">Seconds</div></div>
   </div>
-  <a href="#" class="btn-primary reveal" style="font-size:14px;padding:17px 46px;" onclick="openRegModal();return false;" onclick="openRegModal();return false.">Secure My Seat Before Registration Closes</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" class="btn-primary reveal" style="font-size:14px;padding:17px 46px;" target="_blank" rel="noopener">Secure My Seat Before Registration Closes</a>
 </section>
 
 <!-- FINAL CTA -->
@@ -761,7 +703,7 @@ body.modal-open { overflow:hidden; }
   <h2 class="final-cta-h reveal">Yes, I Want To Understand<br><span>Real Project Engineering</span></h2>
   <p class="final-cta-sub reveal">Free Registration &nbsp;·&nbsp; Industry Certificate &nbsp;·&nbsp; June 2, 2026 &nbsp;·&nbsp; 5:00 PM</p>
   <div style="display:flex;flex-direction:column;align-items:center;gap:14px;" class="reveal">
-    <a href="#" class="btn-mega" onclick="openRegModal();return false;">Register Free Now</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" class="btn-mega" target="_blank" rel="noopener">Register Free Now</a>
     <div class="limited-tag"><span>⚠</span> Limited Seats Available. Reserve Before Registration Closes.</div>
   </div>
 </section>
@@ -792,7 +734,7 @@ body.modal-open { overflow:hidden; }
       <div class="contact-block">
         <span class="contact-block-label">Register for Webinar</span>
         <span class="contact-block-val" style="font-size:18px;">JUNE 2, 2026</span>
-        <a href="#" class="contact-block-link" onclick="openRegModal();return false;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" class="contact-block-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
           Register Free
         </a>
@@ -877,7 +819,7 @@ body.modal-open { overflow:hidden; }
         <a href="https://chat.whatsapp.com/JYm9O1rLtaaHXKehvN4Rwc" target="_blank" rel="noopener">WhatsApp Group</a>
       </div>
       <div style="margin-top:16px;">
-        <a href="#" class="footer-reg-link" onclick="openRegModal();return false;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/viewform" class="footer-reg-link" target="_blank" rel="noopener">
           Register Free →
         </a>
       </div>
@@ -1024,269 +966,8 @@ document.querySelectorAll('.form-input').forEach(i=>i.addEventListener('input',f
 document.querySelectorAll('.radio-card input').forEach(r=>r.addEventListener('change',function(){const e=document.getElementById('err-'+this.name);if(e)e.textContent='';}));
 
 
-// ═══ MODAL LOGIC ═══
-function openRegModal() {
-  document.getElementById('reg-modal-overlay').style.display = 'block';
-  document.body.classList.add('modal-open');
-  // Reset form state
-  document.getElementById('modalForm').style.display = '';
-  document.getElementById('modal-success').style.display = 'none';
-  document.getElementById('modal-error').style.display = 'none';
-  // Scroll modal to top
-  setTimeout(() => {
-    const overlay = document.getElementById('reg-modal-overlay');
-    overlay.scrollTop = 0;
-  }, 10);
-}
-
-function closeRegModal(e) {
-  if (e && e.target !== document.getElementById('reg-modal-overlay')) return;
-  document.getElementById('reg-modal-overlay').style.display = 'none';
-  document.body.classList.remove('modal-open');
-}
-
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.getElementById('reg-modal-overlay').style.display = 'none';
-    document.body.classList.remove('modal-open');
-  }
-});
-
-// Modal form submission
-document.getElementById('modalForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  let valid = true;
-  const errDiv = document.getElementById('modal-error');
-
-  // Text/select validation
-  const texts = [
-    {id:'mf-name',    err:'merr-name',    msg:'Full name required',       ok:v=>v.trim().length>1},
-    {id:'mf-whatsapp',err:'merr-whatsapp',msg:'WhatsApp number required', ok:v=>v.trim().length>7},
-    {id:'mf-email',   err:'merr-email',   msg:'Valid email required',     ok:v=>/^[^@]+@[^@]+\.[^@]+$/.test(v)},
-    {id:'mf-location',err:'merr-location',msg:'Location required',        ok:v=>v.trim().length>1},
-    {id:'mf-college', err:'merr-college', msg:'College name required',    ok:v=>v.trim().length>1},
-    {id:'mf-year',    err:'merr-year',    msg:'Please choose year',       ok:v=>v!==''},
-  ];
-  texts.forEach(f => {
-    const el = document.getElementById(f.id);
-    const er = document.getElementById(f.err);
-    if (!f.ok(el.value)) { el.classList.add('err'); er.textContent = f.msg; valid = false; }
-    else { el.classList.remove('err'); er.textContent = ''; }
-  });
-
-  // Radio validation
-  [{name:'msource',err:'merr-source',msg:'Select how you heard about us'},
-   {name:'mgrad',  err:'merr-grad',  msg:'Select graduate type'},
-   {name:'mdept',  err:'merr-dept',  msg:'Select your department'}
-  ].forEach(f => {
-    const sel = document.querySelector('input[name="'+f.name+'"]:checked');
-    const er = document.getElementById(f.err);
-    if (!sel) { er.textContent = f.msg; valid = false; } else er.textContent = '';
-  });
-
-  // Checkbox
-  if (!document.getElementById('mf-agree').checked) {
-    errDiv.style.display = 'block';
-    errDiv.textContent = 'Please agree to receive communications to proceed.';
-    valid = false;
-  } else errDiv.style.display = 'none';
-
-  if (!valid) {
-    const fe = document.querySelector('.mf-input.err');
-    if (fe) fe.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    return;
-  }
-
-  // Loading state
-  const btn = document.getElementById('mf-submit');
-  document.getElementById('mf-btn-txt').textContent = 'Submitting...';
-  document.getElementById('mf-spinner').style.display = 'inline-block';
-  btn.disabled = true; btn.style.opacity = '0.7';
-
-  // Submit to Google Forms
-  const fd = new FormData();
-  fd.append('entry.2005620554', document.getElementById('mf-name').value);
-  fd.append('entry.1045781291', document.getElementById('mf-whatsapp').value);
-  fd.append('entry.1166974658', document.getElementById('mf-email').value);
-  fd.append('entry.839337160',  document.getElementById('mf-location').value);
-  fd.append('entry.1528666826', document.querySelector('input[name="msource"]:checked')?.value || '');
-  fd.append('entry.422773479',  document.querySelector('input[name="mgrad"]:checked')?.value || '');
-  fd.append('entry.1065046570', document.querySelector('input[name="mdept"]:checked')?.value || '');
-  fd.append('entry.1166974657', document.getElementById('mf-college').value);
-  fd.append('entry.2013717627', document.getElementById('mf-year').value);
-
-  try {
-    await fetch('https://docs.google.com/forms/d/e/1FAIpQLSfnrap-4hL0hgXx2fPxx8jEhzJgvP83wJ5sEsKqpP3rbjkvmg/formResponse', {
-      method: 'POST', mode: 'no-cors', body: fd
-    });
-    document.getElementById('modalForm').style.display = 'none';
-    document.getElementById('modal-success').style.display = 'block';
-    // Scroll modal to top to show success
-    document.getElementById('reg-modal-overlay').scrollTop = 0;
-  } catch (err) {
-    errDiv.style.display = 'block';
-    errDiv.textContent = 'Submission error. Please try again or contact us on WhatsApp.';
-    btn.disabled = false; btn.style.opacity = '1';
-    document.getElementById('mf-btn-txt').textContent = 'Confirm My Free Seat';
-    document.getElementById('mf-spinner').style.display = 'none';
-  }
-});
-
-// Clear errors on input
-document.querySelectorAll('.mf-input').forEach(i => i.addEventListener('input', function() { this.classList.remove('err'); }));
-document.querySelectorAll('.mf-radio input').forEach(r => r.addEventListener('change', function() {
-  const e = document.getElementById('merr-' + this.name.replace('m',''));
-  if (e) e.textContent = '';
-}));
-
 </script>
 
-<!-- ═══════════════════════════════════════
-     REGISTRATION MODAL POPUP
-═══════════════════════════════════════ -->
-<div id="reg-modal-overlay" onclick="closeRegModal(event)" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);overflow-y:auto;padding:24px 16px;">
-  <div id="reg-modal" onclick="event.stopPropagation()" style="position:relative;max-width:820px;margin:auto;background:#0a0101;border:1px solid rgba(232,0,13,0.25);border-top:3px solid #e8000d;box-shadow:0 0 80px rgba(232,0,13,0.2),0 24px 80px rgba(0,0,0,0.8);">
-
-    <!-- Close button -->
-    <button onclick="closeRegModal()" style="position:absolute;top:16px;right:18px;background:rgba(232,0,13,0.1);border:1px solid rgba(232,0,13,0.3);color:#e8000d;width:36px;height:36px;font-size:18px;line-height:1;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-family:sans-serif;" onmouseover="this.style.background='rgba(232,0,13,0.25)'" onmouseout="this.style.background='rgba(232,0,13,0.1)'">&times;</button>
-
-    <!-- Modal header -->
-    <div style="padding:36px 44px 28px;border-bottom:1px solid rgba(232,0,13,0.1);background:linear-gradient(180deg,rgba(232,0,13,0.06) 0%,transparent 100%);">
-      <div style="font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:4px;color:#e8000d;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px;">
-        <span style="width:20px;height:1px;background:#e8000d;display:inline-block;"></span>
-        Free Registration
-      </div>
-      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,52px);line-height:1;margin-bottom:10px;">
-        Secure Your <span style="color:#e8000d;">Free Seat</span>
-      </h2>
-      <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:#555;letter-spacing:1.5px;">📅 JUNE 02, 2026</span>
-        <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:#555;letter-spacing:1.5px;">⏰ 5:00 PM – 6:15 PM</span>
-        <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:#555;letter-spacing:1.5px;">💻 ONLINE · FREE · LIMITED SEATS</span>
-      </div>
-    </div>
-
-    <!-- Form body -->
-    <div style="padding:32px 44px 40px;">
-
-      <!-- Success -->
-      <div id="modal-success" style="display:none;text-align:center;padding:48px 24px;">
-        <div style="font-size:52px;color:#00e676;line-height:1;margin-bottom:12px;">✓</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:3px;color:#00e676;margin-bottom:12px;">YOU'RE REGISTERED!</div>
-        <p style="font-size:15px;color:#888;max-width:420px;margin:0 auto 20px;">Your seat is confirmed for <strong style="color:#fff;">June 2, 2026 at 5:00 PM.</strong><br>We'll send joining details to your email and WhatsApp.</p>
-        <p style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#444;letter-spacing:2px;">CHECK YOUR EMAIL &amp; WHATSAPP FOR CONFIRMATION</p>
-        <button onclick="closeRegModal()" style="margin-top:24px;background:#e8000d;color:white;border:none;padding:14px 36px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;cursor:pointer;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all 0.3s;" onmouseover="this.style.background='#ff1a25'" onmouseout="this.style.background='#e8000d'">CLOSE</button>
-      </div>
-
-      <!-- Error -->
-      <div id="modal-error" style="display:none;padding:12px 18px;background:rgba(232,0,13,0.07);border:1px solid rgba(232,0,13,0.3);border-left:3px solid #e8000d;margin-bottom:20px;font-size:13px;color:#ff6666;font-family:'Rajdhani',sans-serif;font-weight:500;"></div>
-
-      <form id="modalForm" novalidate>
-
-        <!-- Row 1 -->
-        <div class="mf-row">
-          <div class="mf-group">
-            <label class="mf-label">Name <span style="color:#e8000d;">*</span></label>
-            <input type="text" class="mf-input" id="mf-name" placeholder="Your full name" autocomplete="name">
-            <span class="mf-err" id="merr-name"></span>
-          </div>
-          <div class="mf-group">
-            <label class="mf-label">WhatsApp Number <span style="color:#e8000d;">*</span></label>
-            <input type="tel" class="mf-input" id="mf-whatsapp" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
-            <span class="mf-err" id="merr-whatsapp"></span>
-          </div>
-        </div>
-
-        <!-- Row 2 -->
-        <div class="mf-row">
-          <div class="mf-group">
-            <label class="mf-label">Email ID <span style="color:#e8000d;">*</span></label>
-            <input type="email" class="mf-input" id="mf-email" placeholder="your@email.com" autocomplete="email">
-            <span class="mf-err" id="merr-email"></span>
-          </div>
-          <div class="mf-group">
-            <label class="mf-label">Current Location <span style="color:#e8000d;">*</span></label>
-            <input type="text" class="mf-input" id="mf-location" placeholder="City, State">
-            <span class="mf-err" id="merr-location"></span>
-          </div>
-        </div>
-
-        <!-- How did you know -->
-        <div class="mf-group mf-full">
-          <label class="mf-label">How did you know about this workshop? <span style="color:#e8000d;">*</span></label>
-          <div class="mf-radio-grid">
-            <label class="mf-radio"><input type="radio" name="msource" value="College / Faculty"><span class="mf-rdot"></span><span class="mf-rtxt">College / Faculty</span></label>
-            <label class="mf-radio"><input type="radio" name="msource" value="Instagram / Facebook"><span class="mf-rdot"></span><span class="mf-rtxt">Instagram / Facebook</span></label>
-            <label class="mf-radio"><input type="radio" name="msource" value="LinkedIn"><span class="mf-rdot"></span><span class="mf-rtxt">LinkedIn</span></label>
-            <label class="mf-radio"><input type="radio" name="msource" value="WhatsApp"><span class="mf-rdot"></span><span class="mf-rtxt">WhatsApp</span></label>
-            <label class="mf-radio"><input type="radio" name="msource" value="Friends"><span class="mf-rdot"></span><span class="mf-rtxt">Friends</span></label>
-            <label class="mf-radio"><input type="radio" name="msource" value="Other"><span class="mf-rdot"></span><span class="mf-rtxt">Other</span></label>
-          </div>
-          <span class="mf-err" id="merr-source"></span>
-        </div>
-
-        <!-- Row 3: Grad + Dept -->
-        <div class="mf-row">
-          <div class="mf-group">
-            <label class="mf-label">Are you _____ graduate? <span style="color:#e8000d;">*</span></label>
-            <div class="mf-radio-stack">
-              <label class="mf-radio"><input type="radio" name="mgrad" value="Diploma"><span class="mf-rdot"></span><span class="mf-rtxt">Diploma</span></label>
-              <label class="mf-radio"><input type="radio" name="mgrad" value="Engineering"><span class="mf-rdot"></span><span class="mf-rtxt">Engineering</span></label>
-            </div>
-            <span class="mf-err" id="merr-grad"></span>
-          </div>
-          <div class="mf-group">
-            <label class="mf-label">Department <span style="color:#e8000d;">*</span></label>
-            <div class="mf-radio-stack">
-              <label class="mf-radio"><input type="radio" name="mdept" value="Mechanical"><span class="mf-rdot"></span><span class="mf-rtxt">Mechanical</span></label>
-              <label class="mf-radio"><input type="radio" name="mdept" value="Electrical"><span class="mf-rdot"></span><span class="mf-rtxt">Electrical</span></label>
-              <label class="mf-radio"><input type="radio" name="mdept" value="Civil"><span class="mf-rdot"></span><span class="mf-rtxt">Civil</span></label>
-              <label class="mf-radio"><input type="radio" name="mdept" value="Other"><span class="mf-rdot"></span><span class="mf-rtxt">Other</span></label>
-            </div>
-            <span class="mf-err" id="merr-dept"></span>
-          </div>
-        </div>
-
-        <!-- Row 4: College + Year -->
-        <div class="mf-row">
-          <div class="mf-group">
-            <label class="mf-label">Graduated from which College / University? <span style="color:#e8000d;">*</span></label>
-            <input type="text" class="mf-input" id="mf-college" placeholder="College or university name">
-            <span class="mf-err" id="merr-college"></span>
-          </div>
-          <div class="mf-group">
-            <label class="mf-label">Year of Passed Out <span style="color:#e8000d;">*</span></label>
-            <select class="mf-input mf-select" id="mf-year">
-              <option value="">Choose year</option>
-              <option>2019 or before</option>
-              <option>2020</option><option>2021</option><option>2022</option>
-              <option>2023</option><option>2024</option><option>2025</option>
-              <option>2026 (Current)</option><option>2027 (Expected)</option><option>2028 (Expected)</option>
-            </select>
-            <span class="mf-err" id="merr-year"></span>
-          </div>
-        </div>
-
-        <!-- Consent -->
-        <div style="display:flex;align-items:flex-start;gap:11px;margin-bottom:28px;padding:13px 16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-left:2px solid rgba(232,0,13,0.3);">
-          <input type="checkbox" id="mf-agree" style="width:15px;height:15px;min-width:15px;margin-top:3px;accent-color:#e8000d;">
-          <label for="mf-agree" style="font-size:12.5px;color:#666;cursor:pointer;line-height:1.55;">I agree to receive webinar updates and communications from <strong style="color:#aaa;">Qural Talent Nexus</strong>. My details will only be used for this webinar.</label>
-        </div>
-
-        <!-- Submit -->
-        <div style="text-align:center;">
-          <button type="submit" id="mf-submit" style="background:#e8000d;color:white;padding:18px 60px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;text-transform:uppercase;border:none;cursor:pointer;clip-path:polygon(14px 0%,100% 0%,calc(100% - 14px) 100%,0% 100%);transition:all 0.3s;display:inline-flex;align-items:center;gap:10px;" onmouseover="if(!this.disabled)this.style.background='#ff1a25'" onmouseout="if(!this.disabled)this.style.background='#e8000d'">
-            <span id="mf-btn-txt">Confirm My Free Seat</span>
-            <svg id="mf-spinner" style="display:none;animation:mfspin 1s linear infinite;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9" stroke-opacity="0.2"/><path d="M12 3a9 9 0 0 1 9 9"/></svg>
-          </button>
-          <p style="margin-top:12px;font-family:'Share Tech Mono',monospace;font-size:9px;color:#333;letter-spacing:2px;">FREE &nbsp;·&nbsp; NO CREDIT CARD &nbsp;·&nbsp; INSTANT CONFIRMATION</p>
-        </div>
-
-      </form>
-    </div><!-- /form body -->
-  </div><!-- /modal -->
-</div><!-- /overlay -->
 
 </body>
 </html>
